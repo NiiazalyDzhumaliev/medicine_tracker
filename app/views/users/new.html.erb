@@ -1,0 +1,14 @@
+<%= link_to (image_tag "back_arrow.png", class: 'back-arrow'), root_path %>
+<div class="header" >
+  <h1>REGISTER</h1>
+</div>
+<div class="form-div">
+  <%= form_with model: @user, local: true, class: 'signup-form' do |f| %>
+    <% @user.errors.full_messages.each do |error| %>
+      <p class="errors">* <%= error %></p>
+    <% end %>
+    <%= f.text_field :name, placeholder: 'Full name', class: 'form-option' %>
+    <%= f.text_field :username, placeholder: 'Username', class: 'form-option' %>  
+    <%= f.submit 'Sign up', class: 'submit' %>
+  <% end %> 
+</div>
