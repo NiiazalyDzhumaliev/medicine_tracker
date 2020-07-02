@@ -1,7 +1,7 @@
-  <%= form_for @medicine do |f| %>
+  <%= form_for [ @group, @medicine ] do |f| %>
     <% @medicine.errors.full_messages.each do |error| %>
     <p class="errors">* <%= error %></p>
-    <% end %>
+    <% end %>    
     <%= f.label 'Name' %>
     <%= f.text_field :name %>
     <br/> <br/>

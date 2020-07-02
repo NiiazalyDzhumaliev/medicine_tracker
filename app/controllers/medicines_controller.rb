@@ -1,12 +1,13 @@
 class MedicinesController < ApplicationController
     def new
         @medicine = Medicine.new
+        @group = Group.find(params[:group_id])
     end
 
     def create
-        @medicine = Medicine.new(medicine_params)
+        @group = Group.find(params[:group_id])
+        @medicine = @group.medicines.new(medicine_params)
         @medicine.author_id = current_user.id
-        @medicine.group_id = 1
         if @medicine.save
           flash[:success] = "Object successfully created"
           redirect_to root_path
@@ -19,7 +20,7 @@ class MedicinesController < ApplicationController
     private
 
     def medicine_params
-        params.require(:medicine).permit(:name, :amount, :author_id)
+        params.require(:medicine).permit(:name, :amount, :author_id, :group_id)
     end
     
 end
