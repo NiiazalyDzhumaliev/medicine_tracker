@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
+  resources :groups
+  resources :medicines
   get  '/login', to: 'sessions#new'
   post  '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
