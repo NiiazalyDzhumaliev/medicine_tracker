@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_081023) do
     t.string "icon"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_081023) do
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "group_id", null: false
+    t.integer "group_id"
     t.index ["group_id"], name: "index_medicines_on_group_id"
   end
 
