@@ -1,3 +1,6 @@
 <%@groups.each do |group|%>
-    <p>group.name</p>
+    <p><%=group.name%></p>
 <%end%>
+
+<%= link_to "Add new", new_group_path %>
+<%= link_to "Main", root_path %>
