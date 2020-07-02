@@ -1,4 +1,3 @@
-
 <div class="header" >
   <h1>LOGIN</h1>
 </div>
@@ -7,7 +6,7 @@
     <% if @error %>
       <p class="errors">* There are no users with that name!</p>
     <% end %>
-    <%= f.text_field :name, placeholder: 'Your name here', class: 'form-option' %> 
+    <%= f.text_field :username, placeholder: 'Your name here', class: 'form-option' %> 
     <%= f.submit 'Log in', class: 'submit' %>
   <% end %> 
 </div>
