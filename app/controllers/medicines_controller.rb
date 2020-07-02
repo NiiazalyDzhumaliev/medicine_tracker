@@ -4,8 +4,8 @@ class MedicinesController < ApplicationController
     end
 
     def create
-        @medicine = Medicine.new(comment_params)
-        @medicine.group_id = params[:group_id]
+        @medicine = Medicine.new(medicine_params)
+        @medicine.author_id = current_user.id
         if @medicine.save
           flash[:success] = "Object successfully created"
           redirect_to group_path(@medicine.group)
@@ -18,7 +18,7 @@ class MedicinesController < ApplicationController
     private
 
     def medicine_params
-        params.require(:medicine).permit(:name, :amount)
+        params.require(:medicine).permit(:name, :amount, :author_id, :group_id)
     end
     
 end
