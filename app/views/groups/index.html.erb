@@ -1,5 +1,6 @@
 <%@groups.each do |group|%>
-    <p><%=group.name%></p>
+    <%=link_to group.name, group_path(group)%>
+    <br/>
 <%end%>
 
 <%= link_to "Add new", new_group_path %>

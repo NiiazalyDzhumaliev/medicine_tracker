@@ -4,6 +4,11 @@ class GroupsController < ApplicationController
         @group = Group.new
     end
 
+    def show
+        @group = Group.find(params[:id])
+    end
+    
+
     def index
         @groups = Group.where(:user_id => current_user.id).order("created_at DESC")
     end
