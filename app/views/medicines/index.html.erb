@@ -1,4 +1,4 @@
-<%@medicines.each do |medicine|%>
+<%current_user.medicines.each do |medicine|%>
     <li><%=medicine.name%></li>
 <%end%>
 <%=link_to 'New Medicine', new_medicine_path%>
