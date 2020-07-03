@@ -15,7 +15,7 @@ class Groups::MedicinesController < ApplicationController
         @medicine.author_id = current_user.id
         if @medicine.save
           flash[:success] = "Object successfully created"
-          redirect_to root_path
+          redirect_to group_path(@group)
         else
           flash[:error] = "Something went wrong"
           render 'new'

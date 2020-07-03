@@ -12,7 +12,7 @@ def create
     @medicine = current_user.medicines.new(medicine_params)
     if @medicine.save
       flash[:success] = "Object successfully created"
-      redirect_to root_path
+      redirect_to medicines_path
     else
       flash[:error] = "Something went wrong"
       render 'new'
