@@ -3,6 +3,10 @@ class MedicinesController < ApplicationController
         @medicine = Medicine.new
         @group = Group.find(params[:group_id])
     end
+    def index
+      @medicines = Medicine.where(:author_id => current_user.id).order("created_at DESC")
+    end
+    
 
     def create
         @group = Group.find(params[:group_id])
