@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :groups do
   resources :medicines, :controller => 'groups/medicines'
   end
-  resources :medicines
-  resources :ungrouped_medicines
+  resources :medicines  
   get  '/login', to: 'sessions#new'
   post  '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
