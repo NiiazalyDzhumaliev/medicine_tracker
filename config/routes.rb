@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   resources :groups do
-  resources :medicines
+  resources :medicines, :controller => 'groups/medicines'
   end
   resources :medicines
   resources :ungrouped_medicines
