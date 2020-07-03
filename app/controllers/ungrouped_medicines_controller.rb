@@ -1,0 +1,2 @@
+class UngroupedMedicinesController < ApplicationController
+end
