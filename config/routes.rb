@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :medicines
   end
   resources :medicines
+  resources :ungrouped_medicines
   get  '/login', to: 'sessions#new'
   post  '/login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
