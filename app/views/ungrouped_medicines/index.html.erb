@@ -1,0 +1,5 @@
+<%@ungrouped_medicines.each do |ungrouped_medicine|%>
+    <li><%= ungrouped_medicine.name%></li>
+<%end%>
+
+<%=link_to 'New Medicine', new_ungrouped_medicine_path%>
