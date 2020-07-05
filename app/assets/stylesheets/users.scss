@@ -2,22 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-* {
-    background-color: #f0f4f7;
-    
+body {
+    margin: 0;
+    padding: 0;   
 }
 
-.main-page-container {
-    height: 200%;
+.main-page-container {   
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #3778c2;     
     display: flex;
     align-items: center;
     flex-direction: column;    
 }
 
 .main-header {
-    font-family: 'Yellowtail', cursive;
+    font-family: 'Kalam', cursive;
     font-size: 150px;
-    color: #434b54;
+    color: white;
 }
 
 .login-container {
@@ -27,16 +30,19 @@
 }
 
 .login-link {
+    font-family: 'Kalam', cursive;
     padding: 15px 100px;
-    background-color: #2870bd;
-    color: white;
+    background-color: white;
+    color: #3778c2;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .signup-link {
+    font-family: 'Kalam', cursive;
     margin-top: 15px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #65665a;
+    color: white;
 }
