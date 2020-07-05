@@ -1,3 +1,17 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.group-container {
+    display: flex;
+    justify-content: center;
+}
+
+.group-name {
+    align-items: center;
+}
+
+.group-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
