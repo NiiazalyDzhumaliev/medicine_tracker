@@ -1,3 +1,42 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+    background-color: #f0f4f7;
+    
+}
+
+.main-page-container {
+    height: 200%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.main-header {
+    font-family: 'Yellowtail', cursive;
+    font-size: 150px;
+    color: #434b54;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-link {
+    padding: 15px 100px;
+    background-color: #2870bd;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.signup-link {
+    margin-top: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #65665a;
+}

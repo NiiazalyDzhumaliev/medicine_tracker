@@ -1,10 +1,18 @@
-<h1>Medicine Tracker</h1>
+<div class="main-page-container">
+<div class="header-container">
+<h1 class="main-header">Medicine Tracker</h1>
+</div>
+<div class="link-container">
+<div class="login-container">
 <% unless sign_in? %>  
-    <%= link_to 'Log in', login_path%>
-    <%= link_to 'Sign up', new_user_path%>
+    <%= link_to 'Log in', login_path, class: 'login-link'%>
+    <%= link_to 'Sign up', new_user_path, class: 'signup-link'%>
+</div>
     <%else%>
     <%= link_to 'Log out', logout_path%>
     <%= link_to "All groups", groups_path %>
     <%= link_to 'All Ungrouped Medicines', medicines_path%>
     <%= link_to 'All Medicines', all_medicines_path%>
 <% end %>
+</div>
+</div>
