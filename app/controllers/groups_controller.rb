@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 
     def show
         @group = Group.find(params[:id])
+        @medicines = Medicine.where(:group_id => params[:id]).where(:author_id => current_user.id).order("created_at DESC").includes(:group)
     end
     
 
