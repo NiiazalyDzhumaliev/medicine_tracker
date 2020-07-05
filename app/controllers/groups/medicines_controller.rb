@@ -5,7 +5,7 @@ class Groups::MedicinesController < ApplicationController
     end
     
     def index
-      @medicines = Medicine.where(:author_id => current_user.id).order("created_at DESC")
+      @medicines = Medicine.grouped_ones(current_user)
     end
     
 
