@@ -4,7 +4,7 @@ class MedicinesController < ApplicationController
 end
 
 def index
-    @medicines = Medicine.where(:author_id => current_user.id).order("created_at DESC")
+    @medicines = Medicine.where(:group_id => nil).where(:author_id => current_user.id).order("created_at DESC")
 end
 
 
@@ -18,6 +18,12 @@ def create
       render 'new'
     end
 end
+
+def all_medicines
+  @all_medicines = Medicine.where(:author_id => current_user.id).order("created_at DESC")
+end
+
+private
 
 def medicine_params
     params.require(:medicine).permit(:name, :amount)
