@@ -9,10 +9,24 @@
     <%= link_to 'Sign up', new_user_path, class: 'signup-link'%>
 </div>
     <%else%>
-    <%= link_to 'Log out', logout_path%>
-    <%= link_to "All groups", groups_path %>
-    <%= link_to 'All Ungrouped Medicines', medicines_path%>
-    <%= link_to 'All Medicines', all_medicines_path%>
+    <div class="group-container">
+    <div class="div-links">
+    <%=image_tag 'group.png', class: 'main-icon'%>
+    <%= link_to "All groups", groups_path, class: 'group-link' %>
+    </div>
+    <div class="div-links">
+    <%=image_tag 'group.png', class: 'main-icon'%>
+    <%= link_to 'All Ungrouped Medicines', medicines_path, class: 'group-link' %>
+    </div>
+    <div class="div-links">
+    <%=image_tag 'group.png', class: 'main-icon'%>
+     <%= link_to 'All Medicines', all_medicines_path, class: 'group-link' %>
+    </div>
+    <div class="div-links">
+    <%=image_tag 'group.png', class: 'main-icon'%>
+     <%= link_to 'Log out', logout_path, class: 'group-link' %>
+    </div>  
+    </div>   
 <% end %>
 </div>
 </div>
