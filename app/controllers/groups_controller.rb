@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
 
     def create
         @group = current_user.groups.new(group_params)
-        @group.icon = params[:icon] || 'https://cdn0.iconfinder.com/data/icons/health-icons-rounded/110/Medicine-2-512.png'
+        # @group.icon = params[:icon] || 'https://cdn0.iconfinder.com/data/icons/health-icons-rounded/110/Medicine-2-512.png'
         if @group.save
           flash[:success] = "Object successfully created"
           redirect_to groups_path
