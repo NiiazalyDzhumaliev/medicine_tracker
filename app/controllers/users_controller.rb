@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   
     def show
       if sign_in?
-        @user = current_user
-        # @total = user_injection
+        @user = current_user        
       else
         @user = nil
       end
