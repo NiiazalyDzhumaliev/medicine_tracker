@@ -74,7 +74,7 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
-    diff-lcs (1.4.3)
+    diff-lcs (1.4.4)
     erubi (1.9.0)
     ffi (1.13.1)
     globalid (0.4.2)
