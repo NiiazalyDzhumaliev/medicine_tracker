@@ -9,9 +9,10 @@
    <p class="medicine-name"><%=medicine.name%></p>
    <p class="medicine-amount"><%=medicine.amount%>mg</p>
    <p class="medicine-amount">on <%=medicine.created_at.to_date%></p>
-   <p class="medicine-name"><%=medicine.group_id%></p>
+   <%if medicine.group%>
+   <p class="medicine-group-name">Group: <%=medicine.group.name%></p>
+   <%=image_tag medicine.group.icon, class: 'group-icon'%>
+   <%end%>
 </div>
 <%end%>
-<%= link_to "New Medicine", new_medicine_path, class: 'new-group-link' %>
-
 </div>
