@@ -1,14 +1,17 @@
 <div class="main-page-container">
 <div class="header-container">
-<h1 class="main-header">Medicine Tracker</h1>
+
 </div>
 <div class="link-container">
 <div class="login-container">
 <% unless sign_in? %>  
+<h1 class="main-header">Medicine Tracker</h1>
     <%= link_to 'Log in', login_path, class: 'login-link'%>
     <%= link_to 'Sign up', new_user_path, class: 'signup-link'%>
 </div>
     <%else%>
+    <h1 class="main-header">Medicine Tracker</h1>
+    <h2 class="name-header"><%=@user.name%></h2>
     <div class="group-container">
     <div class="div-links">
     <%=image_tag 'group.png', class: 'main-icon'%>
