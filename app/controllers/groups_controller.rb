@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
     
 
     def index
-        @groups = Group.where(:user_id => current_user.id).order("created_at DESC")
+        @groups = Group.where(:user_id => current_user.id).order("name ASC")
     end
 
     def create
