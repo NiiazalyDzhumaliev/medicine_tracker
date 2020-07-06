@@ -1,12 +1,17 @@
+  <div class="group-header-container">
+<%= link_to "Main", root_path, class: 'group-main-link'%>
+<h1 class="group-header">New Group Form</h2>
+ <%= link_to 'Log out', logout_path, class: 'group-logout-link'%>
+</div>
   <%= form_for @medicine do |f| %>
     <% @medicine.errors.full_messages.each do |error| %>
     <p class="errors">* <%= error %></p>
-    <% end %>    
-    <%= f.label 'Name' %>
-    <%= f.text_field :name %>
-    <br/> <br/>
-    <%= f.label 'Amount' %>
-    <%= f.text_field :amount %>
-    <br/> <br/>
-    <%= f.submit "Create" %>
+    <% end %> 
+    <div class="new-group-form">    
+    <%= f.text_field :name, placeholder: 'Name of medicine here', class: 'newgroup-input' %>
+     
+    <%= f.text_field :amount, placeholder: 'Amount in mg', class: 'newgroup-input' %>
+    
+    <%= f.submit "Create", class: 'newgroup-submit'  %>
+    </div>
   <% end %>

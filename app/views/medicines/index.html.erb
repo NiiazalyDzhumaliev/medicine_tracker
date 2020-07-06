@@ -8,7 +8,7 @@
 <div class="allgroup-wrapper">
    <p class="medicine-name"><%=medicine.name%></p>
    <p class="medicine-amount"><%=medicine.amount%>mg</p>
-   <p class="medicine-amount">at <%=medicine.created_at%>mg</p>
+   <p class="medicine-amount">on <%=medicine.created_at.to_date%></p>
 </div>
 <%end%>
 <%= link_to "New Medicine", new_medicine_path, class: 'new-group-link' %>
