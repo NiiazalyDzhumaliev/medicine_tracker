@@ -1,109 +1,106 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.group-container {    
-    display: flex;
-}
-
-.group-name {
-    align-items: center;
+.group-container {
+  display: flex;
 }
 
 .group-icon {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;  
-    margin-right: 20px;  
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
 .group-link {
-    text-decoration: none;
-    font-size: 20px;
-    font-family: 'Kalam', cursive;
-    color: white;
-    margin-left: 15px;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+  color: white;
+  margin-left: 15px;
 }
 
 .allgroup-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;        
-    background-color: #dde9f0;    
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #dde9f0;
 }
 
 .group-header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #3778c2;
-    padding-right: 20px;
-    padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3778c2;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
-.group-header {   
-    font-family: 'Kalam', cursive;    
-    color: white;    
+.group-header {
+  font-family: 'Kalam', cursive;
+  color: white;
 }
 
-.group-main-link, .group-logout-link {    
-    color: white;
-    font-size: 20px;
-    font-family: 'Kalam', cursive;
+.group-main-link,
+.group-logout-link {
+  color: white;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
 }
 
-.new-group-link {    
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: #2ed95b;
-    text-align: center;    
-    color: white;
-    font-size: 30px;
-    font-family: 'Kalam', cursive;
+.new-group-link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #2ed95b;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: 'Kalam', cursive;
 }
 
 .allgroup-wrapper {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid white;
-    padding-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .group-name {
-    text-decoration: none;
-    color: #3778c2;
-    font-size: 20px;
-    font-family: 'Kalam', cursive;
+  text-decoration: none;
+  color: #3778c2;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+  align-items: center;
 }
 
 .new-group-form {
-    display: flex;
-    flex-direction: column;  
-    align-items: center;
-    padding-left: 20px;
-    padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 .newgroup-input {
-    padding: 15px 32px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  padding: 15px 32px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .newgroup-submit {
-    background-color: #3778c2;
-    border: none;
-    color: white;
-    padding: 15px 95px;
-    text-align: center;
-    text-decoration: none;    
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 10px;
+  background-color: #3778c2;
+  border: none;
+  color: white;
+  padding: 15px 95px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
 }
-
