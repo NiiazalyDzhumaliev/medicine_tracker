@@ -7,9 +7,7 @@
 <%@groups.each do |group|%>
 <div class="allgroup-wrapper">
 <%= link_to (image_tag group.icon, class: 'group-icon'), group_path(group) %>
-    <%=link_to group.name, group_path(group)%>
-    
-    <br/>
+    <%=link_to group.name, group_path(group), class: 'group-name'%>        
 </div>
 <%end%>
 <%= link_to "Add new Group", new_group_path, class: 'new-group-link' %>
