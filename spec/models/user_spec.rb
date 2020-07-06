@@ -14,14 +14,14 @@ RSpec.describe User, type: :model do
       expect(User.new(name: nil)).to_not be_valid
     end
 
-    it "should have many medicines" do
-        t = User.reflect_on_association(:medicines)
-        expect(t.macro).to eq(:has_many)
+    it 'should have many medicines' do
+      t = User.reflect_on_association(:medicines)
+      expect(t.macro).to eq(:has_many)
     end
 
-    it "should have many groups" do
-        t = User.reflect_on_association(:groups)
-        expect(t.macro).to eq(:has_many)
+    it 'should have many groups' do
+      t = User.reflect_on_association(:groups)
+      expect(t.macro).to eq(:has_many)
     end
-  end  
+  end
 end

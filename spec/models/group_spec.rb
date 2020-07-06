@@ -17,7 +17,7 @@ RSpec.describe Group, type: :model do
     end
   end
 
-  it "should have many medicines" do
+  it 'should have many medicines' do
     t = Group.reflect_on_association(:medicines)
     expect(t.macro).to eq(:has_many)
   end

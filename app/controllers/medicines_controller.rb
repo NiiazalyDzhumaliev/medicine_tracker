@@ -1,31 +1,30 @@
 class MedicinesController < ApplicationController
   def new
     @medicine = Medicine.new
-end
+  end
 
-def index
+  def index
     @medicines = Medicine.ungrouped_ones(current_user)
-end
+  end
 
-
-def create
+  def create
     @medicine = current_user.medicines.new(medicine_params)
     if @medicine.save
-      flash[:success] = "Object successfully created"
+      flash[:success] = 'Object successfully created'
       redirect_to medicines_path
     else
-      flash[:error] = "Something went wrong"
+      flash[:error] = 'Something went wrong'
       render 'new'
     end
-end
+  end
 
-def all_medicines
-  @all_medicines = Medicine.where(:author_id => current_user.id).order("created_at DESC")
-end
+  def all_medicines
+    @all_medicines = Medicine.where(author_id: current_user.id).order('created_at DESC')
+  end
 
-private
+  private
 
-def medicine_params
+  def medicine_params
     params.require(:medicine).permit(:name, :amount)
-end
+  end
 end
