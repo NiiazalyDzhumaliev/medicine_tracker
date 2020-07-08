@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "users#show"
-  resources :users, only: [:new, :create, :show]
+  resources :users
   resources :groups do
   resources :medicines, :controller => 'groups/medicines'
   end

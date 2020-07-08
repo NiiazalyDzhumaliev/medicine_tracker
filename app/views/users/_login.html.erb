@@ -27,8 +27,16 @@
     </div>
     <div class="div-links">
     <%=image_tag 'logout.png', class: 'main-icon'%>
-     <%= link_to 'Log out', logout_path, class: 'group-link' %>
+     <%= link_to 'Log out', logout_path, class: 'group-link' %>     
     </div>  
+      <div class="div-links">
+    <%=image_tag 'update.png', class: 'main-icon'%>   
+     <%= link_to 'Update user info', edit_user_path(@user), class: 'group-link' %>
+    </div> 
+    <div class="div-links">
+    <%=image_tag 'delete.png', class: 'main-icon'%>   
+     <%= link_to 'Delete user', user_path(@user), method: :delete, data: { confirm: 'Are you certain you want to delete this?'}, class: 'group-link' %>
+    </div> 
     </div>   
 <% end %>
 </div>

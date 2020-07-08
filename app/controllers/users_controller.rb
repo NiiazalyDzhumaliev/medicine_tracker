@@ -17,6 +17,26 @@ class UsersController < ApplicationController
     @user = (current_user if sign_in?)
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(params.require(:user).permit(:name))
+    
+    flash.notice = "User #{@user.name} Updated!"
+
+    redirect_to root_path
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash.notice = "User #{@user.name} Deleted!"
+    redirect_to root_path
+  end
+
   private
 
   def user_params
