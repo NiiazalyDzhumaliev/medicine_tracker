@@ -21,6 +21,6 @@ describe 'Medicines controller', type: :feature do
       fill_in 'medicine[amount]', with: '300'
     end
     click_button 'Create'
-    expect(page).to have_content 'All Ungroupped Medicines'
+    expect(page).to have_content 'All Ungrouped Medicines'
   end
 end
