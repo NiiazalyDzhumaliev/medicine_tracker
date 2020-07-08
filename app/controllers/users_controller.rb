@@ -23,18 +23,22 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(params.require(:user).permit(:name))
-    
+    if @user.update(params.require(:user).permit(:name))
     flash.notice = "User #{@user.name} Updated!"
-
     redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    if @user.destroy
     flash.notice = "User #{@user.name} Deleted!"
     redirect_to root_path
+    else
+    render :root
+    end
   end
 
   private
