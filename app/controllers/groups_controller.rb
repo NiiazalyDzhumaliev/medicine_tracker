@@ -5,11 +5,11 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @medicines = Medicine.where(group_id: params[:id]).where(author_id: current_user.id).order('created_at DESC')
+    @medicines = @group.medicines
   end
 
   def index
-    @groups = Group.where(user_id: current_user.id).order('name ASC')
+    @groups = current_user.groups.order('name ASC')
   end
 
   def create

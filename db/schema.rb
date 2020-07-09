@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_02_081023) do
+ActiveRecord::Schema.define(version: 2020_07_09_100805) do
+
+  create_table "groupings", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "medicine_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_groupings_on_group_id"
+    t.index ["medicine_id"], name: "index_groupings_on_medicine_id"
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -27,8 +36,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_081023) do
     t.integer "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "group_id"
-    t.index ["group_id"], name: "index_medicines_on_group_id"
+    t.boolean "status", default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_07_02_081023) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "groupings", "groups"
+  add_foreign_key "groupings", "medicines"
   add_foreign_key "groups", "users"
-  add_foreign_key "medicines", "groups"
 end

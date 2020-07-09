@@ -1,7 +1,7 @@
 class Groups::MedicinesController < ApplicationController
   def new
     @medicine = Medicine.new
-    @group = Group.find(params[:group_id])
+    @group = Group.find(params[:group_id])    
   end
 
   def index
@@ -9,10 +9,15 @@ class Groups::MedicinesController < ApplicationController
   end
 
   def create
+    @grouping = Grouping.new
     @group = Group.find(params[:group_id])
-    @medicine = @group.medicines.new(medicine_params)
+    @medicine = Medicine.new(medicine_params)
     @medicine.author_id = current_user.id
+    @medicine.status = true
     if @medicine.save
+      @grouping.medicine_id = @medicine.id
+      @grouping.group_id = @group.id       
+      if @grouping.save
       flash[:success] = 'Object successfully created'
       redirect_to group_path(@group)
     else
@@ -20,6 +25,7 @@ class Groups::MedicinesController < ApplicationController
       render 'new'
     end
   end
+end
 
   private
 

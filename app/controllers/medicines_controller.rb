@@ -19,7 +19,7 @@ class MedicinesController < ApplicationController
   end
 
   def all_medicines
-    @all_medicines = Medicine.where(author_id: current_user.id).order('created_at DESC')
+    @all_medicines = current_user.medicines
   end
 
   private
