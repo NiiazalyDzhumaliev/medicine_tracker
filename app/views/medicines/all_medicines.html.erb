@@ -13,7 +13,10 @@
    <p class="medicine-name"><%=medicine.name%></p>
    <p class="medicine-amount"><%=medicine.amount%>mg</p>
    <p class="medicine-amount">on <%=medicine.created_at.to_date%></p>
-  
+   <%if medicine.status%>
+   <p class="medicine-name">Group:<%=group_occurence(medicine)[0]%></p> 
+   <%= image_tag icon_occurence(medicine)[0], class: 'group-icon'%>
+   <%end%>
 </div>
 <%end%>
 </div>
