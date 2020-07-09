@@ -19,7 +19,7 @@ class MedicinesController < ApplicationController
   end
 
   def all_medicines
-    @all_medicines = current_user.medicines.includes(:groups)  
+    @all_medicines = current_user.medicines.includes(:groups)
   end
 
   private

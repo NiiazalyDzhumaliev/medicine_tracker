@@ -1,7 +1,7 @@
 class Groups::MedicinesController < ApplicationController
   def new
     @medicine = Medicine.new
-    @group = Group.find(params[:group_id])    
+    @group = Group.find(params[:group_id])
   end
 
   def index
@@ -16,13 +16,13 @@ class Groups::MedicinesController < ApplicationController
     @medicine.status = true
     if @medicine.save
       @grouping.medicine_id = @medicine.id
-      @grouping.group_id = @group.id       
+      @grouping.group_id = @group.id
       if @grouping.save
-      flash[:success] = 'Object successfully created'
-      redirect_to group_path(@group)
-    else
-      flash[:error] = 'Something went wrong'
-      render 'new'
+        flash[:success] = 'Object successfully created'
+        redirect_to group_path(@group)
+      else
+        flash[:error] = 'Something went wrong'
+        render 'new'
     end
   end
 end

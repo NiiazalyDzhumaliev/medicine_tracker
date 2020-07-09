@@ -13,10 +13,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    unless log_out
-    redirect_to root_url
+    if log_out
+      render :new
     else
-    render :new
+      redirect_to root_url
     end
   end
 end

@@ -6,5 +6,5 @@ class Group < ApplicationRecord
   validates :icon, format: { with: /.+\.(gif|jpe?g|png)\z/, message: 'Please use .gif, .jpeg, .jpg or .png' }
   validates :icon, format: { with: URI::DEFAULT_PARSER.make_regexp(%w[http https]), message: 'Please use a valid URL' }
 
-  scope :group_name, -> (group) {where(id:group)}
+  scope :group_name, ->(group) { where(id: group) }
 end
