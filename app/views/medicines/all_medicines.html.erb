@@ -5,7 +5,7 @@
 <br/>
 <%= link_to 'All Ungrouped Medicines', medicines_path, class: 'group-main-link' %>
 </div>
-<h1 class="group-header">All Medicines</h2>
+<h1 class="group-header">All Medicines (<%=@all_medicines.count%>)</h2>
  <%= link_to 'Log out', logout_path, class: 'group-logout-link'%>
 </div>
 <%@all_medicines.each do |medicine|%>
@@ -19,4 +19,5 @@
    <%end%>
 </div>
 <%end%>
+<%= link_to "New Medicine", new_medicine_path, class: 'new-group-link' %>
 </div>
