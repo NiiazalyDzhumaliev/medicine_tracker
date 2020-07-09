@@ -4,7 +4,7 @@ class MedicinesController < ApplicationController
   end
 
   def index
-    @medicines = current_user.medicines.where(status: false).order('created_at DESC')
+    @medicines = current_user.medicines.where(status: false).includes(:groups).order('created_at DESC')
   end
 
   def create
@@ -19,7 +19,7 @@ class MedicinesController < ApplicationController
   end
 
   def all_medicines
-    @all_medicines = current_user.medicines    
+    @all_medicines = current_user.medicines.includes(:groups)  
   end
 
   private
