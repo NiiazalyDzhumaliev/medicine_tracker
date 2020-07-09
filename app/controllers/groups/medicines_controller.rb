@@ -17,15 +17,14 @@ class Groups::MedicinesController < ApplicationController
     if @medicine.save
       @grouping.medicine_id = @medicine.id
       @grouping.group_id = @group.id
-      if @grouping.save
-        flash[:success] = 'Object successfully created'
-        redirect_to group_path(@group)
-      else
-        flash[:error] = 'Something went wrong'
-        render 'new'
+      @grouping.save
+      flash[:success] = 'Object successfully created'
+      redirect_to group_path(@group)
+    else
+      flash[:error] = 'Something went wrong'
+      render 'new'
     end
   end
-end
 
   private
 
