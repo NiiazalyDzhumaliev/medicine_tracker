@@ -1,0 +1,15 @@
+<div class="allgroup-container">
+<div class="group-header-container">
+<%= link_to "Main", root_path, class: 'group-main-link'%>
+<h1 class="group-header">All Groups</h2>
+ <%= link_to 'Log out', logout_path, class: 'group-logout-link'%>
+</div>
+<%@groups.each do |group|%>
+<div class="allgroup-wrapper">
+<%= link_to (image_tag group.icon, class: 'group-icon'), group_path(group) %>
+    <%=link_to group.name, group_path(group), class: 'group-name'%>        
+</div>
+<%end%>
+<%= link_to "Add new Group", new_group_path, class: 'new-group-link' %>
+
+</div>

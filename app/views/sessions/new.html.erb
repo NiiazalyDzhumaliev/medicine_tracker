@@ -1,13 +1,15 @@
-
-<div class="header" >
-  <h1>LOGIN</h1>
-</div>
-<div class="form-div">
-  <%= form_for :session, url: login_path, html: {class: 'signup-form'} do |f| %>
+  <div class="sessions-container">
+  <h1 class="login-header">LOGIN</h1>
+  
+  <%= form_for :session, url: login_path do |f| %>
     <% if @error %>
       <p class="errors">* There are no users with that name!</p>
     <% end %>
-    <%= f.text_field :name, placeholder: 'Your name here', class: 'form-option' %> 
-    <%= f.submit 'Log in', class: 'submit' %>
+    <div class="login-form">
+    <%= f.text_field :username, placeholder: 'Username here', class: 'login-input'%> 
+    <%= f.submit 'Log in', class: 'login-submit'%>
+    <%=link_to 'Main', root_path, class: 'main-link'%>
+    </div>
   <% end %> 
+  
 </div>

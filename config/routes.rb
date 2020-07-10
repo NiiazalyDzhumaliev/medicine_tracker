@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  resources :users, only: [:new, :create, :show]
+  root "users#show"
+  resources :users
+  resources :groups do
+  resources :medicines, :controller => 'groups/medicines'
+  end
+  resources :medicines  
+  get 'all_medicines', to: 'medicines#all_medicines'
   get  '/login', to: 'sessions#new'
   post  '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
-  root "users#show"
+  get 'logout', to: 'sessions#destroy', as: 'logout'  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

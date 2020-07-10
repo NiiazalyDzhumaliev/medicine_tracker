@@ -1,3 +1,110 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-page-container {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #3778c2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-header {
+  font-family: 'Kalam', cursive;
+  font-size: 70px;
+  color: white;
+  margin-bottom: 0;
+}
+
+.name-header {
+  color: white;
+  margin-bottom: 50px;
+  font-family: 'Kalam', cursive;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-link {
+  font-family: 'Kalam', cursive;
+  padding: 15px 100px;
+  background-color: white;
+  color: #3778c2;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.signup-link {
+  font-family: 'Kalam', cursive;
+  margin-top: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+
+.signup-header {
+  text-align: center;
+  margin-top: 0;
+  color: white;
+  background-color: #3778c2;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.signup-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fullname-input,
+.username-input {
+  padding: 15px 32px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signup-button {
+  background-color: #3778c2;
+  border: none;
+  color: white;
+  padding: 15px 95px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.group-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.div-links {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.main-icon {
+  width: 50px;
+  height: 50px;
+}

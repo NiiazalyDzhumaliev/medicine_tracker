@@ -1,0 +1,12 @@
+ <h1 class="signup-header">UPDATE</h1>
+  <%= form_with model: @user, local: true do |f| %>
+    <% @user.errors.full_messages.each do |error| %>
+      <p class="errors">* <%= error %></p>
+    <% end %>
+    <div class="signup-form">
+    <%= f.text_field :name, placeholder: 'Full name', class: 'fullname-input'%>  
+    <%= f.submit 'Update', class: 'signup-button'%>
+    <%=link_to 'Main', root_path, class: 'main-link'%>
+    </div>
+  <% end %> 
+</div>

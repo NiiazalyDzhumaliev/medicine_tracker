@@ -1,10 +1,39 @@
- <div class = "logo">
-  <h1>Medicine Tracker</h1>
-</div>
-<% if sign_in? %>
-  <div class = "login">
-    <%= link_to 'Log in', login_path, class: 'sign-in' %>
-    <%= link_to 'Sign up', new_user_path, class: 'sign-up' %>
-  </div>
+<div class="main-page-container">
+<div class="header-container">
 
+</div>
+<div class="link-container">
+<div class="login-container">
+<% unless sign_in? %>  
+<h1 class="main-header">Medicine Tracker</h1>
+    <%= link_to 'Log in', login_path, class: 'login-link'%>
+    <%= link_to 'Sign up', new_user_path, class: 'signup-link'%>
+</div>
+    <%else%>
+    <h1 class="main-header">Medicine Tracker</h1>
+    <h2 class="name-header"><%=@user.name%></h2>
+    <div class="group-container">
+    <div class="div-links">
+    <%=image_tag 'group.png', class: 'main-icon'%>
+    <%= link_to "All groups", groups_path, class: 'group-link' %>
+    </div>
+    <div class="div-links">
+    <%=image_tag 'allmedicine.png', class: 'main-icon'%>
+     <%= link_to 'All Medicines', all_medicines_path, class: 'group-link' %>
+    </div>
+    <div class="div-links">
+    <%=image_tag 'logout.png', class: 'main-icon'%>
+     <%= link_to 'Log out', logout_path, class: 'group-link' %>     
+    </div>  
+      <div class="div-links">
+    <%=image_tag 'update.png', class: 'main-icon'%>   
+     <%= link_to 'Update user info', edit_user_path(@user), class: 'group-link' %>
+    </div> 
+    <div class="div-links">
+    <%=image_tag 'delete.png', class: 'main-icon'%>   
+     <%= link_to 'Delete user', user_path(@user), method: :delete, data: { confirm: 'Are you certain you want to delete this?'}, class: 'group-link' %>
+    </div> 
+    </div>   
 <% end %>
+</div>
+</div>

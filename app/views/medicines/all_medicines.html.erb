@@ -1,0 +1,23 @@
+<div class="allgroup-container">
+<div class="group-header-container">
+<div>
+<%= link_to "Main", root_path, class: 'group-main-link'%>
+<br/>
+<%= link_to 'All Ungrouped Medicines', medicines_path, class: 'group-main-link' %>
+</div>
+<h1 class="group-header">All Medicines (<%=@all_medicines.count%>)</h2>
+ <%= link_to 'Log out', logout_path, class: 'group-logout-link'%>
+</div>
+<%@all_medicines.each do |medicine|%>
+<div class="allgroup-wrapper">
+   <p class="medicine-name"><%=medicine.name%></p>
+   <p class="medicine-amount"><%=medicine.amount%>mg</p>
+   <p class="medicine-amount">on <%=medicine.created_at.to_date%>&nbsp</p>
+   <%if medicine.status%>
+   <p class="medicine-name">Group: <%=group_occurence(medicine)[0]%>&nbsp</p> 
+   <%= image_tag icon_occurence(medicine)[0], class: 'group-icon'%>
+   <%end%>
+</div>
+<%end%>
+<%= link_to "New Medicine", new_medicine_path, class: 'new-group-link' %>
+</div>

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    @user = User.find_by(name: params[:session][:name])
+    @user = User.find_by(username: params[:session][:username])
     if @user
       log_in @user
       redirect_to root_url
@@ -13,7 +13,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    log_out
-    redirect_to root_url
+    if log_out
+      render :new
+    else
+      redirect_to root_url
+    end
   end
 end
